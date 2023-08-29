@@ -1,5 +1,5 @@
 import React from 'react';
-import { Image } from '@chakra-ui/react';
+import { Image, Skeleton } from '@chakra-ui/react';
 import ToastedSesameLogo from '../../assets/ToastedSesameLogo.png';
 import styled from 'styled-components';
 import MailchimpFormContainer from '../Mailchimp/MailchimpFormContainer';
@@ -9,18 +9,20 @@ const ConstructionPage = () => {
   return (
     <Container>
       <ScrollContainer>
-      <ContentWrapper>
-        <CenteredFlex>
-          <LogoImage src={ToastedSesameLogo} alt="logo img" />
-          <GreetingText>
+        <ContentWrapper>
+          <CenteredFlex>
+            <LogoImage
+              src={ToastedSesameLogo}
+              alt="logo img"
+              fallback={<Skeleton width="15%" height="15%" />}
+            />
+            <GreetingText>
               Embrace Growth with
-            <TSTTextWrapper>
-              🌼 Toasted Sesame Therapy 🌼
-            </TSTTextWrapper>
-          </GreetingText>
-          <MailchimpFormContainer />
-        </CenteredFlex>
-      </ContentWrapper>
+              <TSTTextWrapper>🌼 Toasted Sesame Therapy 🌼</TSTTextWrapper>
+            </GreetingText>
+            <MailchimpFormContainer />
+          </CenteredFlex>
+        </ContentWrapper>
       </ScrollContainer>
     </Container>
   );
@@ -32,8 +34,6 @@ const Container = styled.div`
   position: relative;
   overflow: hidden;
 `;
-
-
 
 const ContentWrapper = styled.div`
   display: flex;
@@ -52,6 +52,7 @@ const CenteredFlex = styled.div`
 
 const LogoImage = styled(Image)`
   width: 15%;
+
   @media only screen and (max-width: 600px) {
     width: 50%;
   }
@@ -68,18 +69,13 @@ const GreetingText = styled.div`
   }
 `;
 
-// const TextWrapper = styled.div`
-//   margin-bottom: 8px;
-//   @media only screen and (max-width: 600px) {
-//     width: 100%;
-//   }
-// `;
 const TSTTextWrapper = styled.div`
   margin-bottom: 8px;
   @media only screen and (max-width: 600px) {
     width: 24rem;
   }
 `;
+
 const ScrollContainer = styled.div`
   overflow: hidden; /* Hide scroll bars */
   position: relative; /* Maintain centered content */

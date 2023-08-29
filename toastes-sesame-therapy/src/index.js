@@ -33,3 +33,50 @@ root.render(
 // to log results (for example: reportWebVitals(console.log))
 // or send to an analytics endpoint. Learn more: https://bit.ly/CRA-vitals
 reportWebVitals();
+// import React, { useState, useEffect } from 'react';
+// import ReactDOM from 'react-dom/client';
+// import { ChakraProvider, Skeleton } from '@chakra-ui/react';
+// import './index.css';
+// import App from './App';
+// import { ToastContainer } from 'react-toastify';
+// import 'react-toastify/dist/ReactToastify.css';
+// import reportWebVitals from './reportWebVitals';
+
+// const root = ReactDOM.createRoot(document.getElementById('root'));
+
+// const LoadingSkeleton = () => {
+//   return (
+//     <div className="container">
+//       <Skeleton height="20px" mb="1rem" />
+//       <Skeleton height="20px" mb="1rem" />
+//       <Skeleton height="20px" mb="1rem" />
+//       {/* Add more Skeletons for other loading content */}
+//     </div>
+//   );
+// };
+
+// function AppWithLoading() {
+//   const [isLoading, setIsLoading] = useState(true);
+
+//   useEffect(() => {
+//     // Simulate loading data or any async operations
+//     setTimeout(() => {
+//       setIsLoading(false);
+//     }, 2000);
+//   }, []);
+
+//   return isLoading ? <LoadingSkeleton /> : <App />;
+// }
+
+// root.render(
+//   <React.StrictMode>
+//     <ChakraProvider>
+//     <div className="app-container">
+//       <AppWithLoading />
+//       </div>
+//       <ToastContainer />
+//     </ChakraProvider>
+//   </React.StrictMode>
+// );
+
+// reportWebVitals();
