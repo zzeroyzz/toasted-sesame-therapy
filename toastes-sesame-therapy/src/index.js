@@ -6,12 +6,14 @@ import App from './App';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import reportWebVitals from './reportWebVitals';
-
+import { BrowserRouter } from 'react-router-dom';
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ChakraProvider>
+    <BrowserRouter>
     <App />
+    </BrowserRouter>
     <ToastContainer />
     </ChakraProvider>
   </React.StrictMode>
