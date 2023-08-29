@@ -1,10 +1,17 @@
+@import url('https://fonts.googleapis.com/css2?family=Fuzzy+Bubbles&display=swap');
 .App {
   text-align: center;
+  overflow: 'hidden';
+  font-family: 'Fuzzy Bubbles', cursive;
 }
 
 .App-logo {
   height: 40vmin;
   pointer-events: none;
+}
+body {
+  width: 100%; /* 100% width of the viewport */
+  min-height: 100vh;
 }
 
 @media (prefers-reduced-motion: no-preference) {
