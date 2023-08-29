@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { Box, Button, FormControl, FormLabel, Input, Text, Flex } from '@chakra-ui/react';
 import styled from 'styled-components';
-import { toast, ToastContainer } from 'react-toastify';
+import { toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 
 const CustomForm = ({ status, message, onValidated }) => {
@@ -20,6 +20,7 @@ const CustomForm = ({ status, message, onValidated }) => {
     } else if (status === 'error') {
       toast.error('Failed to send email. Please try again.');
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [status]);
 
   const handleChange = (e) => {

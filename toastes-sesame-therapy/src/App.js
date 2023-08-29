@@ -1,5 +1,4 @@
 import ConstructionPage from './components/ConstructionPage/ConstructionPage';
-import Home from './components/Home/Home';
 import { BrowserRouter as Router, Route, Routes, Navigate } from 'react-router-dom';
 import { Flex } from '@chakra-ui/react';
 
