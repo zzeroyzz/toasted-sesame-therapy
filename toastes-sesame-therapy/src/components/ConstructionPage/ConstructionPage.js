@@ -1,7 +1,6 @@
 import React from 'react';
 import { Image } from '@chakra-ui/react';
 import ToastedSesameLogo from '../../assets/ToastedSesameLogo.png';
-import FlowerBackgroundImg from '../../assets/FlowerBackgroundImg.png';
 import styled from 'styled-components';
 import MailchimpFormContainer from '../Mailchimp/MailchimpFormContainer';
 import 'react-toastify/dist/ReactToastify.css';
@@ -9,15 +8,12 @@ import 'react-toastify/dist/ReactToastify.css';
 const ConstructionPage = () => {
   return (
     <Container>
-      <BackgroundImage src={FlowerBackgroundImg} alt="background img" />
       <ScrollContainer>
       <ContentWrapper>
         <CenteredFlex>
           <LogoImage src={ToastedSesameLogo} alt="logo img" />
           <GreetingText>
-            <TextWrapper>
               Embrace Growth with
-            </TextWrapper>
             <TSTTextWrapper>
               🌼 Toasted Sesame Therapy 🌼
             </TSTTextWrapper>
@@ -37,22 +33,12 @@ const Container = styled.div`
   overflow: hidden;
 `;
 
-const BackgroundImage = styled(Image)`
-  width: 100%;
-  position: absolute;
-  top: 0;
-  left: 0;
-  z-index: -1;
-  @media only screen and (max-width: 600px) {
-   height:70rem;
-  }
-`;
+
 
 const ContentWrapper = styled.div`
   display: flex;
-  flex-direction: column; /* Stack children vertically */
-  align-items: center; /* Center horizontally */
-  padding: 2.7rem;
+  flex-direction: column;
+  align-items: center;
 `;
 
 const CenteredFlex = styled.div`
@@ -78,12 +64,16 @@ const GreetingText = styled.div`
   font-family: 'Fuzzy Bubbles', cursive;
   @media only screen and (max-width: 600px) {
     width: 100%;
+    font-size: 1.3rem;
   }
 `;
 
-const TextWrapper = styled.div`
-  margin-bottom: 8px;
-`;
+// const TextWrapper = styled.div`
+//   margin-bottom: 8px;
+//   @media only screen and (max-width: 600px) {
+//     width: 100%;
+//   }
+// `;
 const TSTTextWrapper = styled.div`
   margin-bottom: 8px;
   @media only screen and (max-width: 600px) {

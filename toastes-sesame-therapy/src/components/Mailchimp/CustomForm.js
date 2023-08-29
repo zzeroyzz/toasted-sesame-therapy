@@ -84,7 +84,7 @@ const FormContainer = styled(Box)`
   padding: 20px;
   border: 1px solid #ccc;
   border-radius: 8px;
-  width: 40rem;
+  width: 45rem;
   font-family: 'Fuzzy Bubbles', cursive;
   font-weight: 600;
   padding-bottom: 2rem;
