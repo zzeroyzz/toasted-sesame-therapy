@@ -16,7 +16,7 @@ function App() {
 
   return (
     <Router>
-      <Flex>
+      <Flex justifyContent="center">
         <Routes>
           <Route path="/" element={<Navigate to="/coming-soon" />} />
           <Route path="/coming-soon" element={ isLoading ? <ToastedLoading/> : <ConstructionPage />} />

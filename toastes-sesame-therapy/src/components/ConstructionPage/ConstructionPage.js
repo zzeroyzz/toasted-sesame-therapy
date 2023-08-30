@@ -1,6 +1,6 @@
 import React from 'react';
-import { Image, Skeleton } from '@chakra-ui/react';
-import ToastedSesameLogo from '../../assets/ToastedSesameLogo.png';
+import { Skeleton } from '@chakra-ui/react'; // Import only Skeleton from Chakra UI
+import ToastedSesameSmall from '../../assets/ToastedSesameSmall.png';
 import styled from 'styled-components';
 import MailchimpFormContainer from '../Mailchimp/MailchimpFormContainer';
 import 'react-toastify/dist/ReactToastify.css';
@@ -11,11 +11,7 @@ const ConstructionPage = () => {
       <ScrollContainer>
         <ContentWrapper>
           <CenteredFlex>
-            <LogoImage
-              src={ToastedSesameLogo}
-              alt="logo img"
-              fallback={<Skeleton width="15%" height="15%" />}
-            />
+              <LogoImage src={ToastedSesameSmall} alt="logo img" />
             <GreetingText>
               Embrace Growth with
               <TSTTextWrapper>🌼 Toasted Sesame Therapy 🌼</TSTTextWrapper>
@@ -50,8 +46,17 @@ const CenteredFlex = styled.div`
   text-align: center;
 `;
 
-const LogoImage = styled(Image)`
+const LogoImage = styled.img`
+  width: 250px;
+
+  @media only screen and (max-width: 600px) {
+    width: 50%;
+  }
+`;
+
+const SkeletonLogo = styled(Skeleton)`
   width: 15%;
+  height: 15%;
 
   @media only screen and (max-width: 600px) {
     width: 50%;
