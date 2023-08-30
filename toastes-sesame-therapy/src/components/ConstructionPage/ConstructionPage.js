@@ -1,5 +1,5 @@
 import React from 'react';
-import { Skeleton } from '@chakra-ui/react'; // Import only Skeleton from Chakra UI
+import { Skeleton } from '@chakra-ui/react';
 import ToastedSesameSmall from '../../assets/ToastedSesameSmall.png';
 import styled from 'styled-components';
 import MailchimpFormContainer from '../Mailchimp/MailchimpFormContainer';
@@ -48,15 +48,6 @@ const CenteredFlex = styled.div`
 
 const LogoImage = styled.img`
   width: 250px;
-
-  @media only screen and (max-width: 600px) {
-    width: 50%;
-  }
-`;
-
-const SkeletonLogo = styled(Skeleton)`
-  width: 15%;
-  height: 15%;
 
   @media only screen and (max-width: 600px) {
     width: 50%;
