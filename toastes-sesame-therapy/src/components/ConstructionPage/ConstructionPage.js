@@ -1,5 +1,4 @@
 import React from 'react';
-import { Skeleton } from '@chakra-ui/react';
 import ToastedSesameSmall from '../../assets/ToastedSesameSmall.png';
 import styled from 'styled-components';
 import MailchimpFormContainer from '../Mailchimp/MailchimpFormContainer';
