@@ -6,6 +6,7 @@ import App from './App';
 import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import reportWebVitals from './reportWebVitals';
+import { BrowserRouter } from 'react-router-dom';
 
 // Extend Chakra UI theme to add responsive breakpoints
 const theme = extendTheme({
@@ -21,9 +22,11 @@ const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <ChakraProvider theme={theme}> {/* Apply the custom theme */}
-      <div className="container"> {/* Apply the container class */}
-        <App />
-      </div>
+      <BrowserRouter>
+        <div className="container"> {/* Apply the container class */}
+          <App />
+        </div>
+      </BrowserRouter>
       <ToastContainer />
     </ChakraProvider>
   </React.StrictMode>

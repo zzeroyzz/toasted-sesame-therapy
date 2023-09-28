@@ -1,16 +1,37 @@
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import ToastedSesameSmall from '../../assets/ToastedSesameSmall.png';
 import styled from 'styled-components';
 import MailchimpFormContainer from '../Mailchimp/MailchimpFormContainer';
 import 'react-toastify/dist/ReactToastify.css';
-
+import {BlurhashCanvas} from 'react-blurhash';
+import { Box } from '@chakra-ui/react';
 const ConstructionPage = () => {
+  const [imagesLoaded, setImagesLoaded] = useState(false);
+
+  useEffect(() => {
+    const img = new Image();
+    img.onload = () => {
+      setImagesLoaded(true);
+    };
+    img.src = ToastedSesameSmall;
+  }, []);
+
   return (
     <Container>
       <ScrollContainer>
         <ContentWrapper>
           <CenteredFlex>
-              <LogoImage src={ToastedSesameSmall} alt="logo img" />
+{!imagesLoaded ? (
+            <BlurhashCanvas
+            width="250"
+            height="250"
+            borderRadius= "50%"
+              hash="LFHw}#V?2NR.%isjs,I]B@t6y3jG"/>
+) : (
+              <img src={ToastedSesameSmall} alt="logo img" onLoad={() =>{
+                setImagesLoaded(true);
+              }} />
+              )}
             <GreetingText>
               Embrace Growth with
               <TSTTextWrapper>🌼 Toasted Sesame Therapy 🌼</TSTTextWrapper>
