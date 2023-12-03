@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import { useEffect, useState } from 'react';
 import { Routes, Route } from 'react-router-dom';
 import Home from './components/Home/Home';
 import Layout from './components/Layout/Layout';
@@ -8,8 +9,8 @@ import ContactUs from './components/ContactUs/ContactUs';
 import MyStory from './components/MyStory/MyStory';
 import Terms from './components/Terms/Terms';
 import TherapeuticApproachGuide from './components/TherapeuticApproachGuide/TherapeuticApproachGuide';
+import NotFound from './components/NotFound/NotFound';
 import { Flex } from '@chakra-ui/react';
-import { useEffect, useState } from 'react';
 import FAQ from './components/FAQ/Faq';
 
 function App() {
@@ -33,6 +34,7 @@ function App() {
         <Route exact path="/my-story" element={<MyStory />} />
         <Route exact path="/therapy-style" element={<TherapeuticApproachGuide />} />
         <Route exact path="/faq" element={<FAQ />} />
+        <Route path="*" element={<NotFound />} />
 
         </Routes>
       </Flex>
