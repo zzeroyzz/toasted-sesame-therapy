@@ -1,77 +1,140 @@
-import React, { useEffect } from 'react';
-import { Flex, Box, Button } from '@chakra-ui/react';
-import styled from 'styled-components';
-import HomeCarousel from './HomeCarousel';
-const Nav = styled.nav`
-  position: fixed;
-  z-index: 9999;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 35px;
-`;
-
-const NavBackground = styled.div`
-  position: absolute;
-  display: block;
-  top: -100%;
-  width: 100%;
-  height: 100%;
-  background: rgb(50, 50, 50);
-  transition: 0.45s ease-in-out;
-`;
-
-const Hero = styled.div`
-  position: relative;
-  width: 100%;
-  height: 800px;
-  background-size: 130%;
-  overflow: hidden;
-`;
-
-const HeroHeading = styled.h1`
-  position: absolute;
-  top: 50%;
-  left: 0;
-  width: 100%;
-  padding: 0.3em;
-  font-size: 3em;
-  font-weight: lighter;
-`;
-
-const ContentWrapper = styled(Box)`
-  width: 80%;
-  height: 3000px;
-  padding: 1em 10%;
-`;
+import {imagesData} from './constants/images';
+import {keyframes} from '@emotion/react';
+import React, {useState, useEffect} from 'react';
+import {
+  Box,
+  Accordion,
+  AccordionItem,
+  Image,
+  VStack,
+  Heading,
+  Text,
+  Button,
+  Flex,
+} from '@chakra-ui/react';
+import './animations/HomeAnimation.css';
 
 const Home = () => {
-  useEffect(() => {
-    const handleScroll = () => {
-      // ... your scroll handling logic ...
-    };
+  const fadeIn = keyframes`
+    from {
+      opacity: 0;
+    }
+    to {
+      opacity: 1;
+    }
+  `;
 
-    window.addEventListener('scroll', handleScroll);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prevIndex) => (prevIndex + 1) % imagesData.length);
+    }, 10000);
 
     return () => {
-      window.removeEventListener('scroll', handleScroll);
+      clearInterval(interval);
     };
   }, []);
 
-
   return (
-    <Flex justifyContent="center" flexDirection="column" width="100%">
-      <Nav>
-        <NavBackground className="nav-bg" />
-      </Nav>
-      <Hero className="hero" width="100%">
-      <HomeCarousel/>
-      </Hero>
-      <ContentWrapper className="content-wrapper">
-        <h1>Some Title</h1>
-        <p>Cray marfa artisan mlkshk tote bag...</p>
-      </ContentWrapper>
-    </Flex>
+    <Box
+      position="relative"
+      w="100vw"
+      h="100vh"
+      overflowY="hidden"
+      overflowX="hidden"
+      transition="background-color 1s"
+      _before={{
+        content: '""',
+        position: 'fixed',
+        top: '0',
+        left: '0',
+        width: '100%',
+        height: '200vh',
+        pointerEvents: 'none',
+        zIndex: 1,
+        backgroundImage:
+          'linear-gradient(180deg, transparent, rgba(0, 0, 0, 0.2) 20%)',
+      }}
+    >
+      <div className="text-content" style={{zIndex: 2}}>
+        <Flex
+          direction="column"
+          align="flex-start"
+          justify="center"
+          w="100%"
+          h="100%"
+        >
+          <VStack spacing={4}>
+            <Accordion allowToggle width="100%" height="100%">
+              <AccordionItem border="none" w="100%" h="100%">
+                <Box position="relative" width="100%">
+                  <Image
+                    src={imagesData[currentImageIndex].image}
+                    alt="Landing Image"
+                    objectFit="cover"
+                    objectPosition="center"
+                    w="100vw" // Set the width to 100vw to cover the entire viewport width
+                    h={{base: '100vh', md: '70vh', lg: '100vh'}} // Adjust height for different screen sizes
+                  />
+                  <Box
+                    position="absolute"
+                    top="0"
+                    left="0"
+                    right="0"
+                    bottom="0"
+                    bg="rgba(0, 0, 0, 0.6)"
+                  />
+                  <Box
+                    position="absolute"
+                    top="50%"
+                    left={{base: '5%', md: '5%', lg: '5%'}}
+                    transform="translateY(-50%)"
+                    maxWidth={{base: '90%', md: '70%', lg: '50%'}}
+                  >
+                    <VStack alignItems="start" spacing={6}>
+                      <Heading
+                        size={{base: '3xl', md: '4xl', lg: '4xl'}}
+                        color="white"
+                        fontWeight="900"
+                        maxWidth="45rem"
+                        css={{animation: `${fadeIn} 1s forwards`}}
+                        key={`heading-${currentImageIndex}`}
+                      >
+                        {imagesData[currentImageIndex].header}
+                      </Heading>
+                      <Text
+                        fontSize={{base: 'xl', md: '2xl', lg: '3xl'}}
+                        color="white"
+                        maxWidth={{base: '80%', md: '90%', lg: '40rem'}}
+                        css={{animation: `${fadeIn} 1s forwards`}}
+                        key={`text-${currentImageIndex}`}
+                      >
+                        {imagesData[currentImageIndex].subtext}
+                      </Text>
+                      <Button
+                        size={{base: 'sm', md: 'md', lg: 'lg'}}
+                        bg="#784B84"
+                        color="white"
+                        css={{animation: `${fadeIn} 1s forwards`}}
+                        key={`button-${currentImageIndex}`}
+                        onClick={() => {
+                          window.location.href =
+                            imagesData[currentImageIndex].buttonLink;
+                        }}
+                        _hover={{ bg: 'rgba(120, 75, 132, 0.8)' }}
+                      >
+                        {imagesData[currentImageIndex].buttonText}
+                      </Button>
+                    </VStack>
+                  </Box>
+                </Box>
+              </AccordionItem>
+            </Accordion>
+          </VStack>
+        </Flex>
+      </div>
+    </Box>
   );
 };
 
