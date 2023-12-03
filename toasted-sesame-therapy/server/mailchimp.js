@@ -1,15 +1,8 @@
-require('dotenv').config('../.env');
+require('dotenv').config({ path: '../.env' }); // Useful for local development
 const axios = require('axios');
 
-/**
- * Subscribes a user to a Mailchimp mailing list.
- *
- * @param {string} email - The email address to subscribe.
- * @returns {Promise<Object>} The response data from Mailchimp.
- */
 const subscribeToMailchimp = async (email, firstName, lastName) => {
-  // Extract the data center from the API key (e.g., us20)
-  const dataCenter = process.env.MAILCHIMP_SERVER
+  const dataCenter = process.env.MAILCHIMP_SERVER;
   const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_ID}/members/`;
 
   try {
