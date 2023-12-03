@@ -5,11 +5,11 @@ const axios = require("axios");
 async function subscribeToMailchimp(email, firstName, lastName) {
   console.log("subscribeToMailchimp function entered");
   const apiKey = process.env.MAILCHIMP_API_KEY;
-  const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
+  const audienceId = process.env.MAILCHIMP_ID;
   const dataCenter = apiKey.split("-")[1];
   const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
   console.log(url, "url");
-  console.log(process.env.MAILCHIMP_AUDIENCE_ID, "MAILCHIMP_AUDIENCE_ID");
+  console.log(process.env.MAILCHIMP_ID, "MAILCHIMP_ID");
   console.log(process.env.MAILCHIMP_ID, "MAILCHIMP_ID");
   console.log(dataCenter, "dataCenter");
   console.log(process.env.MAILCHIMP_API_KEY, "API_KEY");
