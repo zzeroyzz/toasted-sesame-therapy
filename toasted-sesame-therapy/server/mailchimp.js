@@ -10,7 +10,9 @@ const axios = require("axios");
 const subscribeToMailchimp = async (email, firstName, lastName) => {
   // Extract the data center from the API key (e.g., us20)
   const dataCenter = process.env.MAILCHIMP_SERVER;
-  const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${process.env.MAILCHIMP_ID}/members/`;
+  const audienceId = process.env.MAILCHIMP_ID;
+  const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
+
   console.log(url, "url");
   try {
     const response = await axios.post(
