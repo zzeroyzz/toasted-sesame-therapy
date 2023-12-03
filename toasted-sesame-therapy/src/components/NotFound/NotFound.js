@@ -3,8 +3,8 @@ import { Box, Text, Link, Image } from '@chakra-ui/react';
 import NotFound from '../../assets/NotFound.jpg';
 const NotFoundPage = () => {
     return (
-        <Box textAlign="center" mt="50px">
-            <Image src={NotFound} alt="404" paddingBottom="2rem"/>
+        <Box textAlign="center" mt="50px" display="flex" flexDirection="column" alignItems="center" padding="2rem">
+            <Image src={NotFound} alt="404" paddingBottom="2rem" maxWidth="80%"/>
             <Text fontSize="24px" color="purple.800">
                 Whoops! Looks like you've taken a detour into the land of lost sesame seeds.
             </Text>

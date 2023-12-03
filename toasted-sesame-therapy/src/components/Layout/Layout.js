@@ -3,10 +3,11 @@ import { Flex } from '@chakra-ui/react';
 import Header from './Header';
 import {ToastedSesameLogo} from './ToastedSesameLogo';
 
-const Layout = ({ children }) => {
+const Layout = ({ children, showHeader }) => {
+  console.log('showHeader', showHeader);
   return (
     <Flex flexDirection="column">
-      <Header ToastedSesameLogo={ToastedSesameLogo}/>
+     {showHeader && <Header ToastedSesameLogo={ToastedSesameLogo}/>}
       <Flex flexGrow={1} flexDirection="column">
         {children}
       </Flex>
