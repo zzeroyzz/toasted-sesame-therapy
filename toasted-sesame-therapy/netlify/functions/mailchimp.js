@@ -3,10 +3,12 @@ const axios = require("axios");
 
 // This is the function we will export
 async function subscribeToMailchimp(email, firstName, lastName) {
+  console.log("subscribeToMailchimp function entered");
   const apiKey = process.env.MAILCHIMP_API_KEY;
   const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
   const dataCenter = apiKey.split("-")[1];
   const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
+  console.log(url, "url");
 
   try {
     const response = await axios.post(
@@ -39,6 +41,11 @@ exports.handler = async (event) => {
   const { email, firstName, lastName } = JSON.parse(event.body);
 
   try {
+    console.log("Calling subscribeToMailchimp with:", {
+      email,
+      firstName,
+      lastName,
+    });
     const response = await subscribeToMailchimp(email, firstName, lastName);
     return {
       statusCode: response.status,

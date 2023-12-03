@@ -1,3 +1,20 @@
 {
-	"siteId": "70befddc-b5e6-4968-a9f4-622a0af7a9aa"
+	"siteId": "70befddc-b5e6-4968-a9f4-622a0af7a9aa",
+	"geolocation": {
+		"data": {
+			"city": "Atlanta",
+			"country": {
+				"code": "US",
+				"name": "United States"
+			},
+			"subdivision": {
+				"code": "GA",
+				"name": "Georgia"
+			},
+			"timezone": "America/New_York",
+			"latitude": 33.7315,
+			"longitude": -84.4195
+		},
+		"timestamp": 1701620183556
+	}
 }
