@@ -1,11 +1,10 @@
+/* eslint-disable no-useless-catch */
 const axios = require("axios");
 
-exports.handler = async (event) => {
-  const { email, firstName, lastName } = JSON.parse(event.body);
-
+// This is the function we will export
+async function subscribeToMailchimp(email, firstName, lastName) {
   const apiKey = process.env.MAILCHIMP_API_KEY;
   const audienceId = process.env.MAILCHIMP_AUDIENCE_ID;
-
   const dataCenter = apiKey.split("-")[1];
   const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
 
@@ -29,14 +28,24 @@ exports.handler = async (event) => {
         },
       }
     );
+    return response;
+  } catch (error) {
+    throw error;
+  }
+}
 
+// We keep the original handler for direct function invocation via HTTP
+exports.handler = async (event) => {
+  const { email, firstName, lastName } = JSON.parse(event.body);
+
+  try {
+    const response = await subscribeToMailchimp(email, firstName, lastName);
     return {
       statusCode: response.status,
       body: JSON.stringify(response.data),
     };
   } catch (error) {
     console.error("Error subscribing to Mailchimp:", error);
-
     return {
       statusCode: error.response.status || 500,
       body: JSON.stringify({
@@ -46,3 +55,6 @@ exports.handler = async (event) => {
     };
   }
 };
+
+// Export the function for use in other files
+exports.subscribeToMailchimp = subscribeToMailchimp;
