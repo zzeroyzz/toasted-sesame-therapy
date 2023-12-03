@@ -83,7 +83,7 @@ const ContactUs = () => {
         embark on this aromatic adventure of self-discovery and growth.
       </FormHeader>
       <Flex direction="column" justifyContent="flex-start" alignItems="flex-start" gap="1rem" width={{base: "100%", md:"80%"}}>
-      <FormControl>
+      <FormControl netlify>
         <FormLabel fontSize="lg">First Name</FormLabel>
         <StyledInput type="text" name="firstName" value={formData.firstName} onChange={handleChange} />
       </FormControl>
