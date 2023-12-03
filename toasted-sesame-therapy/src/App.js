@@ -48,6 +48,8 @@ function App() {
               element={<TherapeuticApproachGuide />}
             />
             <Route exact path="/faq" element={<FAQ />} />
+            <Route path="/submit-form"  />
+
             <Route path="*" element={<NotFound />} />
           </Routes>
         </Flex>
