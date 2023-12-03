@@ -1,10 +1,11 @@
-require("dotenv").config("../.env");
 const axios = require("axios");
 
 /**
  * Subscribes a user to a Mailchimp mailing list.
  *
  * @param {string} email - The email address to subscribe.
+ * @param {string} firstName - The first name of the user.
+ * @param {string} lastName - The last name of the user.
  * @returns {Promise<Object>} The response data from Mailchimp.
  */
 const subscribeToMailchimp = async (email, firstName, lastName) => {
@@ -12,9 +13,7 @@ const subscribeToMailchimp = async (email, firstName, lastName) => {
   const dataCenter = process.env.MAILCHIMP_SERVER;
   const audienceId = process.env.MAILCHIMP_ID;
   const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
-
-  console.log(url, "url");
-  console.log(audienceId, "audienceId");
+  
   try {
     const response = await axios.post(
       url,
