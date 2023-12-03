@@ -9,6 +9,13 @@ async function subscribeToMailchimp(email, firstName, lastName) {
   const dataCenter = apiKey.split("-")[1];
   const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
   console.log(url, "url");
+  console.log(process.env.MAILCHIMP_AUDIENCE_ID, "MAILCHIMP_AUDIENCE_ID");
+  console.log(process.env.MAILCHIMP_ID, "MAILCHIMP_ID");
+  console.log(dataCenter, "dataCenter");
+  console.log(process.env.MAILCHIMP_API_KEY, "API_KEY");
+  console.log(apiKey, 'apiKey')
+  console.log(audienceId, 'audienceId')
+
 
   try {
     const response = await axios.post(
