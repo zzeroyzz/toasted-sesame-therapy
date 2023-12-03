@@ -14,9 +14,9 @@ const subscribeToMailchimp = async (email, firstName, lastName) => {
   const audienceId = process.env.MAILCHIMP_ID;
   const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
   console.log(url, "url");
-  console.log(`Data Center: ${process.env.MAILCHIMP_SERVER}`); // Should log the correct value
-  console.log(`Audience ID: ${process.env.MAILCHIMP_ID}`); // Should log the correct value
-  console.log(`API Key: ${process.env.MAILCHIMP_API_KEY}`); // Should log the correct value
+  console.log(`Data Center: ${process.env.MAILCHIMP_SERVER}`);
+  console.log(`Audience ID: ${process.env.MAILCHIMP_ID}`);
+  console.log(`API Key: ${process.env.MAILCHIMP_API_KEY}`);
   try {
     const response = await axios.post(
       url,
