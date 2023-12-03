@@ -4,7 +4,6 @@ import Header from './Header';
 import {ToastedSesameLogo} from './ToastedSesameLogo';
 
 const Layout = ({ children, showHeader }) => {
-  console.log('showHeader', showHeader);
   return (
     <Flex flexDirection="column">
      {showHeader && <Header ToastedSesameLogo={ToastedSesameLogo}/>}
