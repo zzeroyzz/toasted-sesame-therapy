@@ -14,6 +14,7 @@ const subscribeToMailchimp = async (email, firstName, lastName) => {
   const url = `https://${dataCenter}.api.mailchimp.com/3.0/lists/${audienceId}/members/`;
 
   console.log(url, "url");
+  console.log(audienceId, "audienceId");
   try {
     const response = await axios.post(
       url,
