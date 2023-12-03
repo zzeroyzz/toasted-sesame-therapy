@@ -29,9 +29,9 @@ module.exports = {
       "react"
     ],
     "rules": {
-      // Add specific rule configurations here
       "react/prop-types": "off", // Disable prop-types validation
       "react-hooks/exhaustive-deps": "off", // Disable exhaustive-deps rule
       "react/no-unescaped-entities": "off" // Disable unescaped-entities rule
+
     }
   };
