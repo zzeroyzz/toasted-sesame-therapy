@@ -14,7 +14,7 @@ export const expertiseData = [
     title: 'The Mind-Body Connection',
     img: Mindbody,
     content:
-    `Somatic Experiencing is a therapeutic approach that recognizes the profound connection between mind and body. By engaging with sensations and movements, we unlock additional pathways for healing, allowing you to connect with your body in a way that complements traditional talk therapy`
+    `Somatic Experiencing is a therapeutic approach that recognizes the profound connection between mind and body. By engaging with sensations and movements, we unlock additional pathways for healing, allowing you to connect with your body in a way that complements traditional talk therapy.`
   },
   {
     title: 'Continual Growth in Somatic Healing Practices',
@@ -26,7 +26,7 @@ export const expertiseData = [
     title: 'Identity as a Therapeutic Tool',
     img: Identity,
     content:
-    `As a therapist, my commitment to an affirming space is rooted in my identities as a Korean American who is queer, neurodivergent, and living with CPTSD. These aspects of my identity are not only integral to who I am but also serve as a lens through which I approach therapeutic work. Understanding firsthand the intersections of marginalized identities allows me to navigate the nuanced experiences of those I work with, making space for genuine connection and empathy. I wish to bring authenticity to the therapeutic relationship, creating an environment where individuals can explore their own identities, relationships, and paths to healing with openness and understanding. `
+    `As a therapist, my commitment to an affirming space is rooted in my identities as a Korean American who is queer, neurodivergent, and living with CPTSD. These aspects of my identity are not only integral to who I am but also serves as a lens through which I approach therapeutic work. Understanding firsthand the intersections of marginalized identities allows me to navigate the nuanced experiences of those I work with, making space for genuine connection and empathy. I wish to bring authenticity to the therapeutic relationship, creating an environment where individuals can explore their own identities, relationships, and paths to healing with openness and understanding. `
   }
 ];
 

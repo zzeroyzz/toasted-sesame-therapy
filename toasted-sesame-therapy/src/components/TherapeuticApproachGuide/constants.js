@@ -15,7 +15,7 @@ export const therapeuticApproachData = [
     title: 'Consent',
     img: Consent,
     content:
-    `I approach therapy from a model of informed consent. I check in frequently around continuing your work with me, setting and following intentions, meeting the needs of each week, and any specific therapeutic interventions you would like to fold into session.`
+    `I approach therapy from a model of informed consent. I will check in frequently around continuing your work with me, setting and following intentions, meeting the needs of each week, and any specific therapeutic interventions you would like to fold into session.`
   },
   {
     title: 'Anti-Oppression',
