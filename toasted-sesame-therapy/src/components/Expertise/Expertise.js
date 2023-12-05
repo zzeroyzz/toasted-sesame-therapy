@@ -61,7 +61,7 @@ const dividerColor = useColorModeValue('gray.400', 'gray.600');
           Explore My Expertise
 
         </Heading>
-        <Text fontSize="xl" textAlign="center" w="80%">
+        <Text fontSize="xl" textAlign="start" w="80%">
           {subtitleText}
         </Text>
 
