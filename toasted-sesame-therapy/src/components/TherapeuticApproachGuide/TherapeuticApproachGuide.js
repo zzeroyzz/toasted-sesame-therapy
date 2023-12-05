@@ -11,7 +11,7 @@ import {
   useColorModeValue,
 } from '@chakra-ui/react';
 import {motion} from 'framer-motion';
-import therapeuticApproachData from './constants';
+import {therapeuticApproachData, subHeaderText} from './constants';
 import ArticleLayout from '../Layout/ArticleLayout';
 
 const MotionBox = motion(Box);
@@ -59,10 +59,11 @@ const Foreclosure = () => {
         Your Personalized Guide to My <br/>Therapeutic Approach
         </Heading>
 
-        <Text fontSize="xl" textAlign="center" w="80%">
-        How do I do therapy?
+      {subHeaderText.map((section, index) => (
+        <Text fontSize="xl" textAlign="center" w="70%" key={index}>
+        {section.content}
         </Text>
-
+))}
         <MotionVStack spacing={10} alignItems="start" w="80%">
           {therapeuticApproachData.map((section, index) => (
             <MotionBox key={section.title} variants={fadeIn} width="100%">
@@ -92,7 +93,7 @@ const Foreclosure = () => {
 
 
 <Link
-  href="/contact"
+  href="/contact-us"
   _hover={{textDecoration: 'none', transform: 'scale(1.05)'}}
   transition="transform 0.2s ease-in-out"
 >

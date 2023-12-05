@@ -92,7 +92,7 @@ const dividerColor = useColorModeValue('gray.400', 'gray.600');
 
         <Divider borderColor={dividerColor} w="80%" my={5} />
         <Link
-        href="/contact"
+        href="/contact-us"
         _hover={{textDecoration: 'none', transform: 'scale(1.05)'}}
         transition="transform 0.2s ease-in-out"
       >

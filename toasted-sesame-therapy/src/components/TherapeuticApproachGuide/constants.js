@@ -32,4 +32,12 @@ export const therapeuticApproachData = [
 
 ];
 
+export const subHeaderText = [{
+  content: `A therapist's style is how the therapist will work with you. We all have our own unique way of helping clients navigate challenges and achieve healing goals.
+  `
+},
+{content:`My style is rooted in understanding the dynamics of power, privilege, and oppression that have shaped my clients' identities and lived experiences.`},
+{content:`In my work I aim to build a supportive atmosphere, by centering my style on the therapeutic relationship, by prioritizing consent, and by using frameworks centered in anti-oppression, anti-hierarchical, trauma, and the somatic (body) experience.`},
+]
+
 export default therapeuticApproachData;
