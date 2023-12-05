@@ -6,6 +6,9 @@ import {
   Text,
   Flex,
   Image,
+  Divider,
+  Link,
+  useColorModeValue,
 } from '@chakra-ui/react';
 import { motion } from 'framer-motion';
 import { FlowerAnimationData, aboutUsContent } from './constants';
@@ -33,6 +36,7 @@ const MyStory = () => {
     tablet: 1024,
     desktop: 1224
   };
+  const dividerColor = useColorModeValue('gray.400', 'gray.600');
 
   useEffect(() => {
     const handleResize = () => {
@@ -141,6 +145,19 @@ const MyStory = () => {
             </Flex>
           </MotionBox>
         </MotionFlex>
+
+        <Divider borderColor={dividerColor} w="80%" my={5} />
+        <Link
+        href="/contact-us"
+        _hover={{textDecoration: 'none', transform: 'scale(1.05)'}}
+        transition="transform 0.2s ease-in-out"
+      >
+        <Text fontSize="lg" paddingTop="1rem"  paddingBottom="1rem"textAlign="center" w="100%">
+        Lets connect 🫰🏻
+        </Text>
+      </Link>
+
+        <Divider borderColor={dividerColor} w="80%" my={5} />
       </ArticleLayout>
   );
 };
