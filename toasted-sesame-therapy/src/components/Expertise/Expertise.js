@@ -85,7 +85,7 @@ const dividerColor = useColorModeValue('gray.400', 'gray.600');
               <MotionText fontWeight="bold" fontSize="2xl" textAlign="left" paddingBottom="1rem">
                 {section.title}
               </MotionText>
-              <MotionText textAlign="justify" fontSize="xl">{section.content}</MotionText>
+              <MotionText textAlign="start" fontSize="xl">{section.content}</MotionText>
             </MotionBox>
           ))}
         </MotionVStack>
