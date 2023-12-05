@@ -67,12 +67,12 @@ const ContactUs = () => {
   };
 
   return (
-    <ArticleLayout padding={16} >
+    <ArticleLayout padding={12} >
        {showConfetti && <Confetti />}
-      <Heading as="h1" size="2xl" paddingTop="4rem">
+      <Heading as="h1" size="2xl" paddingTop="4rem" >
               Contact Us
               </Heading><br/>
-              <Heading as="h1" size="lg">
+              <Heading as="h1" size="lg" paddingBottom="1rem">
               Embrace Growth with <br/>
             🌼 Toasted Sesame Therapy 🌼
               </Heading>
