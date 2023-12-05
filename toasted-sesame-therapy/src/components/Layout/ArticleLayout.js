@@ -15,7 +15,6 @@ const ArticleLayout = ({ children, ...props }) => {
     <MotionBox
       pt={150}
       pb={100}
-      
       backgroundColor="#e8dfeb"
       color="gray.700"
       maxWidth="1000px"

@@ -55,8 +55,8 @@ const Foreclosure = () => {
       animate="animate"
     >
       <MotionVStack spacing={8} alignItems="center">
-        <Heading as="h1" size="2xl" textAlign="center">
-        Your Personalized Guide to My <br/>Therapeutic Approach
+        <Heading as="h1" size="2xl" textAlign="center" padding="1rem">
+        Your Personalized Guide to <br/>My Therapeutic Approach
         </Heading>
 
       {subHeaderText.map((section, index) => (
