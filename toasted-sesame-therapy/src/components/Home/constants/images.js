@@ -9,7 +9,7 @@ export const imagesData = [
     image: GetInTouch,
     header: 'Embrace Growth with Toasted Sesame Therapy',
     subtext:
-      'Just as toasted sesame seeds release their rich aroma when gently warmed, our therapy practice seeks to unlock the hidden strengths within you.',
+      'Just as toasted sesame seeds release their rich aroma when gently warmed, our queer and Asian owned Atlanta therapy practice seeks to unlock the hidden strengths within you.',
     buttonText: 'Get in Touch',
     buttonLink: '/contact-us',
   },

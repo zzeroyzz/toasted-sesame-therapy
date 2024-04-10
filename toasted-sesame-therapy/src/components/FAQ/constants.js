@@ -1,7 +1,7 @@
 export const faqData = [
   {
     question: "What is the cost per session, and do you accept insurance?",
-    answer: "Sessions are $125 for 50 mins or $65 for 30 minutes. I do not work with insurance companies, but can provide you with documentation for potential reimbursement."
+    answer: "Sessions are $100 for 50 mins or $65 for 30 minutes. I do not work with insurance companies, but can provide you with documentation for potential reimbursement."
   },
   {
     question: "Are sessions virtual/online or in-person?",
