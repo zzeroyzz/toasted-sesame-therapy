@@ -21,7 +21,7 @@ export const aboutUsContent = [
     text: 'When we understand the effects of global colonialism and oppression so deeply and personally, we must see taking care of ourselves as another form of radical action. I really value my healing work and self care, and am participating in Somatic Therapy to learn about my nervous system. Beyond that, I love fantasy novels and therapy books, taking care of my many many plants, collecting all things Kirby, and finding figures from my favorite animes (My Hero, Demon Slayer, Castlevania…). Hobbies like gaming, crafting, photography, hiking, and karaoke keep me grounded, and spending quality time with my three silly cats adds a lot of joy to my life.',
   },
   {
-    text: '- Kay',
+    text: '- Kay (she/they)',
   },
 
 ];
